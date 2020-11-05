@@ -28,6 +28,9 @@ class userController extends baseController {
    * @example ./api/user/login.json
    */
   async login(ctx) {
+    if (yapi.WEBCONFIG.closeRegister && !params.admin) {
+      return (ctx.body = yapi.commons.resReturn(null, 400, '禁止网页登录，请联系管理员'));
+    }
     //登录
     let userInst = yapi.getInst(userModel); //创建user实体
     let email = ctx.request.body.email;
@@ -297,12 +300,12 @@ class userController extends baseController {
    * @example ./api/user/login.json
    */
   async reg(ctx) {
+    let params = ctx.request.body; //获取请求的参数,检查是否存在用户名和密码
     //注册
-    if (yapi.WEBCONFIG.closeRegister) {
+    if (yapi.WEBCONFIG.closeRegister && !params.admin) {
       return (ctx.body = yapi.commons.resReturn(null, 400, '禁止注册，请联系管理员'));
     }
     let userInst = yapi.getInst(userModel);
-    let params = ctx.request.body; //获取请求的参数,检查是否存在用户名和密码
 
     params = yapi.commons.handleParams(params, {
       username: 'string',
