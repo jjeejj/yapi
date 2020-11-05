@@ -54,7 +54,8 @@ const HomeGuest = () => (
                     登录 / 注册
                   </Button>
                 </Link> */}
-                {ThirdLogin != null ? <ThirdLogin /> : null}
+                {ThirdLogin != null ? <ThirdLogin /> : null}<br /> <br />
+                <span className="desc">若您未绑定，请点击该按钮绑定用户信息: <a href="https://new.h5no1.com/cerberus/wechat/index.html" target="_blank" rel="noopener noreferrer"><button>去绑定</button></a></span>
               </div>
             </div>
           </Col>
