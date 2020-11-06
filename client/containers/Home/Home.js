@@ -1,7 +1,7 @@
 import './Home.scss';
 import React, { PureComponent as Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Row, Col, Button, Icon, Card } from 'antd';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
@@ -366,11 +366,11 @@ class Home extends Component {
             </div>
             <div className="tip-btns">
               <div className="btn-group">
-                <Link to="/login">
+                {/* <Link to="/login">
                   <Button type="primary" className="btn-home btn-login">
                     登录 / 注册
                   </Button>
-                </Link>
+                </Link> */}
                 <Button className="btn-home btn-home-normal">
                   <a target="_blank" rel="noopener noreferrer" href="https://hellosean1025.github.io/yapi">
                     使用文档
